@@ -1,2 +1,3 @@
 # sasm
-Send a slack message
+
+Send A Slack Message (SASM).
