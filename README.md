@@ -1,5 +1,7 @@
 # SASM
 
+![Docker Pulls](https://img.shields.io/docker/pulls/utrecht/sasm.svg)
+
 Send A Slack Message (SASM).
 
 ## Create a Slack token
@@ -46,6 +48,8 @@ chmod 0600 ~/.sasm/config.yml
 ```
 
 ## Send a slack message
+
+[![dockeri.co](https://dockeri.co/image/utrecht/sasm)](https://hub.docker.com/r/utrecht/sasm)
 
 ```bash
 docker run \
