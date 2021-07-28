@@ -41,7 +41,7 @@ slack_token: someSlackToken
 ```
 
 Save the file. Update the permissions to ensure that you are the
-only man that is able to read and write to the config file:
+only one that is able to read and write to the config file:
 
 ```bash
 chmod 0600 ~/.sasm/config.yml
