@@ -20,7 +20,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/030/sasm/pkg/slack"
+	"github.com/slack-go/slack"
 	"github.com/spf13/cobra"
 )
 
@@ -37,10 +37,16 @@ to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("plain called")
 
-		t := slack.Text{Type: "mrkdwn", Text: txt}
-		b := []slack.Blocks{{Type: "section", Text: &t}}
-		data := slack.Data{Blocks: b, Channel: "#" + slackChannel, Icon: ":robot_face:", Username: "sasm"}
-		data.PostMessage(slackToken)
+		api := slack.New(slackToken)
+		channelID, timestamp, err := api.PostMessage(
+			slackChannel,
+			slack.MsgOptionText(txt, false),
+			slack.MsgOptionAsUser(true),
+		)
+		if err != nil {
+			log.Fatal(err)
+		}
+		fmt.Printf("Message successfully sent to channel %s at %s", channelID, timestamp)
 	},
 }
 
