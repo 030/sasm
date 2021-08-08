@@ -8,15 +8,14 @@ Send A Slack Message (SASM).
 
 * Open Slack
 * Click on a workspace
-* Administration
+* `Administration` or `Settings & administration`
 * Manage apps
-* Query for `hooks`
-* Incoming WebHooks
+* Query for `bots`
+* Click on `Bots Connect a bot to the Slack Real Time Messaging API.`
 * Add to Slack
-* Create a new channel
-* Create
-* Add people
-* Add Incoming WebHooks Integration
+* Enter a username for the bot in the `Username` field
+* Click on `Add bot integration`
+* Copy the API Token that appears on the screen
 
 ## Configure sasm
 
@@ -36,7 +35,7 @@ Add a Slack token:
 
 ```bash
 ---
-slack_channel: someSlackChannel
+slack_channel: someSlackChannelID-clickOnChannelAndCopyTheID
 slack_token: someSlackToken
 ```
 
@@ -53,6 +52,14 @@ chmod 0600 ~/.sasm/config.yml
 
 ```bash
 docker run \
-    -v /home/${USER}/.sasm/:/home/sasm/.sasm/ utrecht/sasm:0.1.0 \
+    -v /home/${USER}/.sasm/:/home/sasm/.sasm/ utrecht/sasm:1.0.0 \
     sasm plain --config /home/sasm/.sasm/config.yml -thello
 ```
+
+## Troubleshooting
+
+```bash
+FATA[0000] channel_not_found
+```
+
+Add the created bot to the channel by inviting it.
