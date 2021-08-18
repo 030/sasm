@@ -1,6 +1,6 @@
 module github.com/030/sasm
 
-go 1.16
+go 1.17
 
 require (
 	github.com/mitchellh/go-homedir v1.1.0
