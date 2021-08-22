@@ -22,5 +22,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Build, test and push a docker image to dockerhub using github actions.
 
 [Unreleased]: https://github.com/030/sasm/compare/1.0.0...HEAD
-[1.0.0]: https://github.com/030/n3dr/compare/0.1.0...1.0.0
+[1.0.0]: https://github.com/030/sasm/compare/0.1.0...1.0.0
 [0.1.0]: https://github.com/030/sasm/releases/tag/0.1.0
