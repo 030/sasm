@@ -1,21 +1,23 @@
 # SASM
 
-![Docker Pulls](https://img.shields.io/docker/pulls/utrecht/sasm.svg)
-
 Send A Slack Message (SASM).
 
-## Create a Slack token
+## Create an App, Channel and Slack token
 
-* Open Slack
-* Click on a workspace
-* `Administration` or `Settings & administration`
-* Manage apps
-* Query for `bots`
-* Click on `Bots Connect a bot to the Slack Real Time Messaging API.`
-* Add to Slack
-* Enter a username for the bot in the `Username` field
-* Click on `Add bot integration`
-* Copy the API Token that appears on the screen
+* Navigate to [Your Apps](https://api.slack.com/apps)
+* Click on `Create New App`
+* `From scratch`
+* Choose an `App Name`
+* `Pick a workspace to develop your app in`
+* `Create App`
+* Add features and functionality: `Permissions`
+* Add an OAuth Scope in the `Bot Token Scopes`: `chat:write`
+* `Install to Workspace`
+* Create a channel and invite the bot
+* Navigate to [Your Apps](https://api.slack.com/apps) again
+* Click on app that you created
+* Click on `OAuth & Permissions`
+* Copy `Bot User OAuth Token`
 
 ## Configure sasm
 
@@ -44,16 +46,6 @@ only one that is able to read and write to the config file:
 
 ```bash
 chmod 0600 ~/.sasm/config.yml
-```
-
-## Send a slack message
-
-[![dockeri.co](https://dockeri.co/image/utrecht/sasm)](https://hub.docker.com/r/utrecht/sasm)
-
-```bash
-docker run \
-    -v /home/${USER}/.sasm/:/home/sasm/.sasm/ utrecht/sasm:1.0.0 \
-    sasm plain --config /home/sasm/.sasm/config.yml -thello
 ```
 
 ## Troubleshooting
